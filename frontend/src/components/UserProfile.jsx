@@ -13,7 +13,7 @@ import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 
 const randomImage =
-  "https://source.unsplash.com/random/1600x900/?nature,photo,technology";
+  "https://source.unsplash.com/random/1600x900/?fruits";
 
 const activeBtnStyles = "bg-mybg text-white font-bold p-2 rounded-full w-20 outline-none";
 const notActiveBtnStyles = "bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none";
@@ -26,6 +26,7 @@ const UserProfile = () => {
 
   const navigate = useNavigate();
   const { userId } = useParams();
+
 
   useEffect(() => {
     const query = userQuery(userId);
@@ -78,7 +79,7 @@ const logout = () => {
               {user?.userName}
             </h1>
             <div className="absolute top-0 z-1 right-0 p-2">
-              {userId === user?.googleId && (
+              {userId === user._id && (
                 <GoogleLogout 
                 clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
                 render={(renderProps) => (

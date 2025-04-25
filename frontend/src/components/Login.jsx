@@ -20,7 +20,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // You can handle form submission here, for example, sending email and password to a backend server
-        console.log('Email:', email);
+        console.log( email);
        
       };
  
@@ -29,8 +29,9 @@ const Login = () => {
     if(response && response.profileObj){
 
     localStorage.setItem('user', JSON.stringify(response.profileObj))
-    
+
     const { name, googleId, imageUrl } = response.profileObj
+    
     const doc = {
       _id: googleId,
       _type: 'user',
@@ -76,6 +77,8 @@ const Login = () => {
               onChange={handleEmailChange} 
               className='bg-gray-200 px-4 py-2 rounded-md mb-4'
             />
+
+            
            
             <button type='submit' className='bg-blue-500 flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none'>
               Sign in with Email
