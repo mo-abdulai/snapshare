@@ -8,7 +8,7 @@ const Search = ({ searchTerm }) => {
   const [pins, setPins] = useState();
   const [loading, setLoading] = useState(false);
 
-  const useDeBounce = (text, delay = 1000) => {
+  const useDeBounce = (text, delay = 500) => {
     
     const [deBounce, setDeBounce] = useState(text);
 
